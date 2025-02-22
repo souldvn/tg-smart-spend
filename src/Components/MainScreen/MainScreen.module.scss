@@ -1,0 +1,76 @@
+$padding: 24px 16px;
+$radius: 20px;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.container {
+  padding: $padding;
+
+  .toppanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 190px;
+  }
+
+  .lang {
+    @include flex-center; // Вынесли повторяющийся flex
+    gap: 8px;
+    background-color: white;
+    width: 74px;
+    height: 25px;
+    border-radius: $radius;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    width: 100%;
+    height: 300px; // Достаточно места для графика
+    @include flex-center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 50px;
+    margin-top: 24px;
+  }
+
+  .button{
+    border-radius: 20px;
+    @include flex-center;
+    background-color: #e6e6e6;
+    width: 100px;
+    height: 39px;
+  }
+
+  .bottomPanel{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: #d9d9d9;
+    height: 78px;
+    gap: 110px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    
+
+    .bottombutton{
+        @include flex-center;
+        flex-direction: column;
+    }
+  }
+}
+
+// Миксин для центрирования
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
